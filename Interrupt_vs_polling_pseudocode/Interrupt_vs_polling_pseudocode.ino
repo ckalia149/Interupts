@@ -11,21 +11,27 @@ void setup()
 
 void loop()
 {
-  digitalRead(inputPin);
   // Poll state of pin 4, if it is hight print: "Polling Checked pin 4 found to be HIGH Start/Continue Program"
-  if (digitalRead(inputPin)) {
+  if (digitalRead(inputPin)==HIGH) {
     Serial.println("Polling Checked pin 4 found to be HIGH Start/Continue Program");
+   // while(state == HIGH){
+       for (i = 1; i <= 15; ++i) {
+        if(state== HIGH){
+      Serial.print("count ");
+      Serial.println(i);
+        }
+      delay(500);
+//    }
+    }
+  }else{
+    Serial.println("...");
   }
   //  Delay for 0.5sec
   delay(500);
 Serial.print("state: ");
 Serial.println(state);
   if (state == HIGH) {
-    for (i = 1; i <= 15; ++i) {
-      Serial.print("count ");
-      Serial.println(i);
-      delay(500);
-    }
+
   } else if (state == LOW) {
     Serial.println("Interrupt Detected stop counting");
   }
