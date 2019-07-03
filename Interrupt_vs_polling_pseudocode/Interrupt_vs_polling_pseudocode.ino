@@ -19,6 +19,8 @@ void loop()
         if(state== HIGH){
       Serial.print("count ");
       Serial.println(i);
+        }else{
+          break;
         }
       delay(500);
 //    }
